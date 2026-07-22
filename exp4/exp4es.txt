@@ -1,0 +1,93 @@
+g) Query message ID and response message ID
+
+For the first query:
+
+Query ID: 0x6153
+Response ID: 0x6153
+
+The IDs are the same so the client can match the response to the correct query.
+
+Answer:
+
+Query ID = 0x6153
+Response ID = 0x6153
+Purpose: The Transaction ID uniquely identifies a DNS query and allows the client to match the corresponding response with the original query.
+
+h) Length of the flag field
+
+The DNS Flags field is 16 bits (2 bytes) long.
+
+Answer:
+
+16 bits (2 bytes)
+
+i) Which bit determines whether the message is a query or a response?
+
+The QR (Query/Response) bit.
+
+0 = Query
+1 = Response
+
+Answer:
+
+The QR bit determines whether the message is a query or a response.
+
+j) Which bits are used only in the response message?
+
+These response-only fields are:
+
+AA – Authoritative Answer
+TC – Truncated
+RA – Recursion Available
+RCODE – Response Code
+
+Functions:
+
+AA: Indicates the responding server is authoritative.
+TC: Indicates the response was truncated.
+RA: Indicates recursion is available.
+RCODE: Indicates whether the query succeeded or reports an error (e.g., NXDOMAIN).
+k) Records present in the query message
+
+For a standard DNS query, the counts are typically:
+
+Questions: 1
+Answers: 0
+Authority: 0
+Additional: 1 (OPT record, because your packet shows OPT)
+
+Answer:
+
+Question Records = 1
+Answer Records = 0
+Authority Records = 0
+Additional Records = 1 (OPT)
+
+l) Records present in the response message
+
+For packet 5731, expand:
+
+Domain Name System (response)
+
+and look at:
+
+Questions
+Answer RRs
+Authority RRs
+Additional RRs
+
+From your screenshot, the response includes an SOA in the authority section and an OPT record, so it is likely:
+
+Questions: 1
+Answers: 0
+Authority: 1
+Additional: 1
+
+Answer (based on your screenshot):
+
+Question Records = 1
+Answer Records = 0
+Authority Records = 1
+Additional Records = 1
+
+If you upload a screenshot of packet 5731 expanded under "Domain Name System (response)", I can verify the exact record counts for part (l).
